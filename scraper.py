@@ -130,7 +130,7 @@ class JurisprudenceScraper:
                         (By.XPATH, f"//a[text()='{month_name}' and not(contains(@class, 'nya'))]")))
 
                     # Proceed to next loop on disabled month
-                    if "progressive" in month_link.get_attribute("class"):
+                    if "progressive" in month_link.get_attribute("class") or "nolnk" in month_link.get_attribute("class"):
                         logging.info(f"Skipping month: {month_name} as it contains class 'progressive'")
                         continue
 
